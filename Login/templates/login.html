@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<style>
+    {% load static %}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+    background-color: #f0f2f5;
+    background-image: url("{% static 'login.jpg' %}");
+    background-size: cover; /* Fills the whole screen */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center; /* Centers the image */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0; /* Remove default margin */
+}
+
+
+    .login-container {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #1a73e8;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+        color: #333;
+        margin-bottom: 0.25rem;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {  /* Added input[type="text"] */
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+        line-height: 1.5;    /* Added consistent line-height */
+        height: 40px;        /* Added fixed height */
+        box-sizing: border-box; /* Ensure padding doesn't affect height */
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="text"]:focus {  /* Added focus for text type */
+        outline: none;
+        border-color: #1a73e8;
+    }
+
+    .show-password {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .Password_Incorrect{
+        color: red;
+        padding: 10px;
+        
+        margin-bottom: 15px;
+    }
+
+    button {
+        background-color: #1a73e8;
+        color: white;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #1557b0;
+    }
+
+    .links {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .links a {
+        color: #1a73e8;
+        text-decoration: none;
+    }
+
+    .links a:hover {
+        text-decoration: underline;
+    }
+
+    .links span {
+        color: #666;
+    }
+
+</style>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
+
+            <div class="show-password">
+                <input type="checkbox" id="showPassword">show password
+            </div>
+            {% if error %}
+              <div class="Password_Incorrect">
+                {{ error }}
+              </div>
+            {% endif %}
+            <button type="submit">SIGN IN</button>
+
+            <div class="links">
+                <a href="/forgot">Forgot Password?</a>
+                <br>
+                <span>Don't have an account? <a href="/signup">Sign up</a></span>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById("showPassword").addEventListener("change", function () {
+            var passwordField = document.getElementById("password");
+            passwordField.type = this.checked ? "text" : "password";
+        });
+    </script>
+</body>
+</html>

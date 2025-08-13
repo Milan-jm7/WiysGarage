@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request A Call Back</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #3f3a36;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-wrapper {
+  background: #fff;
+  padding: 40px;
+  width: 700px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid red;
+  border-top: 20px solid transparent;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.callback-form h1 {
+  font-size: 36px;
+  color: #2a2322;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+select {
+  width: 50%;
+  padding: 12px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+button {
+  background: #c40000;
+  color: white;
+  padding: 14px 40px;
+  border: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #a80000;
+}
+
+  </style>
+</head>
+<body>
+  <div class="form-wrapper">
+    <form class="callback-form">
+      <div class="triangle"></div>
+      <h1>Request A Call Back</h1>
+      <div class="row">
+        <input type="text" placeholder="First Name" required />
+        <input type="text" placeholder="Vehicle Details" required />
+      </div>
+      <input type="text" placeholder="Mobile Phone" required />
+      <select required>
+        <option value="" disabled selected>Select Panels For Dent Paint Above</option>
+        <option value="a-pillar">A-Pillar</option>
+        <option value="b-pillar">B-Pillar</option>
+        <option value="bonnet">Bonnet</option>
+        <option value="door-handle">Door Handle</option>
+        <option value="fender-left">Fender Left</option>
+        <option value="fender-right">Fender Right</option>
+        <option value="front-bumper">Front Bumper</option>
+        <option value="front-doorleft">Front Door Left</option>
+        <option value="front-Doorright">Front Door Right</option>
+        <option value="full-bodydc">Full Body(Different Color)</option>
+        <option value="full-bodysc">Full Body (Same Color)</option>
+        <option value="quarter-panelleft">Quarter Panel Left</option>
+        <option value="quarter-panelright">Quarter Panel Right</option>
+        <option value="rear-bumper">Rear Bumper</option>
+        <option value="rear-bumleft">Rear Door Left</option>
+        <option value="rear-bumright">Rear Door Right</option>
+        <option value="rear-flooring">Rear Flooring</option>
+        <option value="roof">Roof</option>
+        <option value="view-mirrorl">View Mirror Left</option>
+        <option value="view-mirrorr">View Mirror Right</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

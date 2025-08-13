@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Template</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        {% load static %}
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: transparent;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ff0000;
+}
+
+.appointment-btn a {
+  border: 1px solid white;
+  padding: 10px 18px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s, color 0.3s;
+}
+
+.appointment-btn a:hover {
+  background: white;
+  color: black;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.hero-content {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background-color: red;
+  color: white;
+  padding: 14px 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #c00;
+}
+
+.slider-nav {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  color: white;
+}
+
+.arrow {
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.dots {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex: 1;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #888;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background: red;
+}
+font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 40px;
+  background: #fff;
+  color: #222;
+}
+
+.services {
+  display: flex;
+  flex-wrap: nowrap; /* Force one row */
+  justify-content: center; /* Center in the container */
+  gap: 20px; /* Smaller space between blocks */
+  text-align: center;
+  overflow-x: auto; /* Add scroll if content overflows */
+}
+
+.service-box {
+  width: 220px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0; /* Prevent shrinking when scrolling */
+}
+
+.service-box img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.service-box a {
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.service-box a:hover {
+  color: red;
+}
+
+.service-box p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+     .advantages {
+  padding: 60px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.advantages h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.advantage-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  color: white;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 1;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  text-align: left;
+}
+
+.card-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .how-it-works {
+    background: url("{% static 'black.jpg' %}") no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+  }
+
+  .how-it-works .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 50px 20px;
+  }
+
+  .how-it-works h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  .how-it-works p {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+
+  .steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .step-box {
+    background: #000;
+    color: #fff;
+    width: 220px;
+    padding: 30px 20px;
+    border-radius: 10px;
+  }
+
+  .step-box h3 {
+    font-size: 48px;
+    margin: 0;
+  }
+
+  .step-box h4 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .step-box p {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.testimonials {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2d2d2d;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-box {
+  width: 45%;
+  min-width: 300px;
+  text-align: left;
+}
+
+.testimonial-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.default-avatar {
+  background: #eee;
+  display: inline-block;
+  text-align: center;
+}
+
+.testimonial-text {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.author {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #2d2d2d;
+}
+
+.source {
+  font-size: 14px;
+  color: #888;
+}
+    </style>
+</head>
+<body>
+{% load static %}
+    <header class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="AutoMechanica" />
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Select</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="appointment-btn">
+      <a href="/booking" class="appointment-button">BOOK AN APPOINTMENT</a>
+    </div>
+  </header>
+
+  <section class="hero">
+     <img src="{% static 'hf1.jpg' %}" alt="BMW Grille" class="hero-bg" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Luxury Car Care<br>Delivered</h1>
+      <p>AutoMechanica is your dealer alternative to your car service and repair needs. Our experienced technicians provide reliable and consistent service for all your auto repair needs.</p>
+      <a href="#" class="cta-btn">Contact Us</a>
+    </div>
+    <div class="slider-nav">
+      <div class="arrow left">&#8592;</div>
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <div class="arrow right">&#8594;</div>
+    </div>
+  </section>
+<section class="services">
+    <div class="service-box">
+      <img src="{% static 'car-diagnostic.svg' %}" alt="Diagnostics">
+      <a href="/diagtic">Diagnostics</a>
+      <p>If your car needs a mobile diagnostic check done at your home or office, let AutoMechanica come to you.</p>
+    </div>
+    <div class="service-box">
+      <img src="{% static 'car-Dent_Paint.svg' %}" alt="Dent and Paint">
+      <a href="/paintdent/">Dent & Paint</a>
+      <p>AutoMechanica specializes in car dent repair and car painting services for a range of models.</p>
+    </div>
+    <div class="service-box">
+      <img src="{% static 'Car-Oil_Lube.svg' %}" alt="Oil / Lube / Filters">
+      <a href="/oilube">Oil / Lube / Filters</a>
+      <p>AutoMechanica proudly serves the Lube, Oil & Filter change needs of customers’ vehicle performance while extending the life of your vehicle.</p>
+    </div>
+    <div class="service-box">
+      <img src="{% static 'Car-Brake.svg' %}" alt="Brakes">
+      <a href="/brake">Brakes</a>
+      <p>The brake system consists of different parts that can be fixed individually. A detailed quote is given after our brake evaluation.</p>
+    </div>
+    <div class="service-box">
+      <img src="{% static 'car-suspension.svg' %}" alt="Suspension">
+      <a href="suspension.html">Suspension</a>
+      <p>The suspension system protects you from bouncing due to bad road conditions and bumps in the road.</p>
+    </div>
+    <div class="service-box">
+      <img src="{% static 'Car_-_Detailing.svg' %}" alt="Detailing">
+      <a href="detailing.html">Detailing</a>
+      <p>AutoMechanica offers professional car detail services. Our interior cleaning and restoration services can recapture that new car look and smell.</p>
+    </div>
+  </section>
+
+<section class="advantages">
+  <h2>AutoMechanica Advantages</h2>
+  <div class="advantage-cards">
+    <div class="card" style="background-image: url{% static 'parts.jpg' %};">
+      <div class="overlay"></div>
+      <div class="card-content">
+        <h3>Genuine OEM Products</h3>
+        <p>Reliable & Genuine Parts At Valuable Prices</p>
+      </div>
+    </div>
+    <div class="card" style="background-image: url('interior-bg.jpg');">
+      <div class="overlay"></div>
+      <div class="card-content">
+        <h3>Fair & Transparent Pricing</h3>
+        <p>Transparent on-call quotes</p>
+      </div>
+    </div>
+    <div class="card" style="background-image: url('engine-bg.jpg');">
+      <div class="overlay"></div>
+      <div class="card-content">
+        <h3>State Of The Art Workshop</h3>
+        <p>Highly trained service specialists</p>
+      </div>
+    </div>
+    <div class="card" style="background-image: url('door-bg.jpg');">
+      <div class="overlay"></div>
+      <div class="card-content">
+        <h3>Door Step Services</h3>
+        <p>Fixed location isn’t required</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works">
+    <div class="overlay">
+      <h2>How It Works</h2>
+      <p>We Offer Full Service Auto Repair & Maintenance</p>
+
+      <div class="steps">
+        <div class="step-box">
+          <h3>01</h3>
+          <h4>Choose</h4>
+          <p>Choose Your Service From Our Wide Range Of Offerings</p>
+        </div>
+        <div class="step-box">
+          <h3>02</h3>
+          <h4>Book</h4>
+          <p>Make An Appointment With Us</p>
+        </div>
+        <div class="step-box">
+          <h3>03</h3>
+          <h4>Fair Pricing</h4>
+          <p>Always Get a Fair Quote</p>
+        </div>
+        <div class="step-box">
+          <h3>04</h3>
+          <h4>At Your Doorstep</h4>
+          <p>Get a Door Step Pick up & Drop Facility</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="testimonials">
+  <h2>Customer Testimonials</h2>
+  <p class="subtitle">What Our Customers Have To Say</p>
+
+  <div class="testimonial-container">
+    <div class="testimonial-box">
+      <img src="upasna.jpg" alt="Upasna" class="testimonial-img">
+      <p class="testimonial-text">
+        It is so smooth to deal with AutoMechanica team that ensures best of experience. From picking-up the car from the doorstep to servicing/best of work, all repair work done to satisfaction to returning the car on the promised date. They keep you updated on the progress at their garage. I don't have to worry anymore for servicing/repairing/painting of any of my vehicles anymore. AutoMechanica is where I will go, they take away all my stress. Highly recommended! Thank you team!
+      </p>
+      <p class="author">❞ Upasna</p>
+      <p class="source">Google Review</p>
+    </div>
+
+    <div class="testimonial-box">
+      <img src="avatar.png" alt="Atul" class="testimonial-img default-avatar">
+      <p class="testimonial-text">
+        It was a wonderful experience. Automechanica is a workshop of highly professional work force. They completely customized my car as per my requirement and delivered with complete ease. Sagar Gade was coordinator who is very professional and provided daily update with photos and videos of the work in progress. I recommend automechanica to all. Thanks and great job.
+      </p>
+      <p class="author">❞ Atul</p>
+      <p class="source">Google Review</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
+</body>
+</html>

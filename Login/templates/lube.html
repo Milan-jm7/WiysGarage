@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transmission and Clutch Repair</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #1a1a1a;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  color: white;
+  padding: 20px 40px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-appointment {
+  padding: 10px 16px;
+  border: 1px solid white;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.hero {
+  background: url('header-bg.jpg') no-repeat center center/cover;
+  padding: 80px 0;
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.content-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  background-color: #fff;
+}
+
+.text-content {
+  width: 50%;
+}
+
+.text-content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.image-content {
+  width: 45%;
+}
+
+.image-content img {
+  width: 100%;
+  border-radius: 8px;
+}
+.button-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.callback-btn {
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.callback-btn:hover {
+  background-color: darkred;
+}
+ margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+.why-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid red;
+  margin: 0 auto 10px;
+}
+
+.why-header h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.why-header p {
+  font-size: 16px;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+.why-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.why-box {
+  width: 250px;
+  text-align: center;
+}
+
+.why-box img {
+  width: 48px;
+  margin-bottom: 10px;
+  filter: brightness(0) invert(1);
+}
+
+.why-box p {
+  font-size: 16px;
+  color: #fff;
+}
+
+.car-center img {
+  height: 400px;
+  max-width: 100%;
+}
+     margin: 0;
+  font-family: Arial, sans-serif;
+  background: white;
+  color: #222;
+}
+
+.how-it-works {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid red;
+  margin: 0 auto 20px;
+}
+
+.how-it-works h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step-box {
+  flex: 1 1 300px;
+  max-width: 350px;
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  font-size: 80px;
+  color: rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.step-box img {
+  width: 50px;
+  height: auto;
+  z-index: 1;
+  position: relative;
+  margin-top: 40px;
+}
+
+.step-box h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+  color: #111;
+  z-index: 1;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.step-box p {
+  font-size: 14px;
+  color: #555;
+  z-index: 1;
+  position: relative;
+  padding: 0 10px;
+}
+     margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #111;
+}
+
+.gallery-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid red;
+  margin: 0 auto 20px;
+}
+
+.gallery-section h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto 60px auto;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button-container {
+  text-align: center;
+}
+
+.callback-btn {
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.callback-btn:hover {
+  background-color: darkred;
+}
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">AUTOMECHANICA</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Select</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="btn-appointment">BOOK AN APPOINTMENT</a>
+  </header>
+
+  <section class="hero">
+    <h1>Transmission and Clutch Repair</h1>
+  </section>
+
+  <section class="content-section">
+    <div class="text-content">
+      <h2>Transmission and<br />Clutch Repair</h2>
+      <p>
+        When your transmission or clutch has issues, get a professional to diagnose and fix the problem.
+        Whether you drive a car or an SUV, an evaluation from AutoMechanica is the best way to get your car back to 100%.
+      </p>
+      <p>
+        From a simple sensor service to a clutch adjustment to a full transmission overhaul, our expert mechanics
+        have the skills to pinpoint the problem and fix any issues before they get out of hand.
+      </p>
+    </div>
+    <div class="image-content">
+      <img src="transmission.jpg" alt="Transmission repair" />
+    </div>
+     <div class="button-container">
+  <a href="#" class="callback-btn">Request a Callback</a>
+     </div>
+  </section>
+ <section class="why-section">
+    <div class="why-header">
+      <div class="triangle"></div>
+      <h2>Why AutoMechanica</h2>
+      <p>We are one of the leading auto repair companies.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-box left">
+        <img src="icon-parts.png" alt="Parts Icon" />
+        <p>Assured Part Availability for Any Car Make</p>
+      </div>
+
+      <div class="car-center">
+        <img src="top-car.png" alt="Car Top View" />
+      </div>
+
+      <div class="why-box right">
+        <img src="icon-repair.png" alt="Repair Icon" />
+        <p>We Do All Complicated<br>Transmission Repair Work</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <div class="triangle"></div>
+    <h2>How It Works</h2>
+
+    <div class="steps-container">
+
+      <div class="step-box">
+        <span class="step-number">1</span>
+        <img src="icon-appointment.png" alt="Appointment Icon" />
+        <h3>BOOK AN APPOINTMENT</h3>
+        <p>Schedule your car pick up with us at your convenience.</p>
+      </div>
+
+
+      <div class="step-box">
+        <span class="step-number">2</span>
+        <img src="icon-diagnosis.png" alt="Diagnosis Icon" />
+        <h3>WORKSHOP DIAGNOSIS REPORT</h3>
+        <p>We will share the workshop diagnosis report and suggest the parts to be changed, such as clutch plate, pressure plate, release bearing, transmission gears, gear-box, internal parts.</p>
+      </div>
+
+
+      <div class="step-box">
+        <span class="step-number">3</span>
+        <img src="icon-delivery.png" alt="Delivery Icon" />
+        <h3>DELIVERY</h3>
+        <p>We will deliver you the car back after restoring it to give you the same original driving pleasure.</p>
+      </div>
+    </div>
+  </section>
+<section class="gallery-section">
+    <div class="triangle"></div>
+    <h2>Gallery</h2>
+
+    <div class="gallery-grid">
+      <img src="gallery1.jpg" alt="Gallery Image 1" />
+      <img src="gallery2.jpg" alt="Gallery Image 2" />
+      <img src="gallery3.jpg" alt="Gallery Image 3" />
+      <img src="gallery4.jpg" alt="Gallery Image 4" />
+      <img src="gallery5.jpg" alt="Gallery Image 5" />
+    </div>
+
+    <div class="button-container">
+      <a href="#" class="callback-btn">Request a Callback</a>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brake Repairs - AutoMechanica</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+      {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: white;
+  color: #222;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.site-header .logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.site-header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.appointment-button {
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  font-weight: 700;
+}
+
+/* Content Section */
+.content-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+}
+
+.text h2 {
+  font-size: 2rem;
+  font-weight: 600; /* or 700 for more boldness */
+}
+
+.red-triangle {
+  color: red;
+  font-size: 1.5rem;
+  transform: rotate(45deg);
+}
+
+.image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+      .button-container {
+  text-align: center;
+}
+
+.callback-btn {
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.callback-btn:hover {
+  background-color: darkred;
+}
+      .why-section {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.why-header .triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid red;
+  margin: 0 auto 1rem;
+}
+
+.why-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.why-header p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 3rem;
+}
+
+.why-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.why-left,
+.why-right {
+  flex: 1;
+  min-width: 200px;
+  max-width: 250px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.why-center img {
+  width: 250px;
+  max-width: 90vw;
+  height: auto;
+}
+.how-it-works {
+  background: #fff;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.how-header .triangle {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 18px solid red;
+  margin: 0 auto 1rem;
+}
+
+.how-header h2 {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.step {
+  max-width: 300px;
+  flex: 1;
+  position: relative;
+}
+
+.step-number {
+  font-size: 5rem;
+  color: rgba(0, 0, 0, 0.05);
+  font-weight: 700;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.step img {
+  width: 60px;
+  height: 60px;
+  margin-top: 2rem;
+  z-index: 1;
+  position: relative;
+}
+
+.step h3 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.step p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+    </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">AUTOMECHANICA</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Select</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="appointment-button">BOOK AN APPOINTMENT</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    Brake Repairs
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="content-section">
+    <div class="text">
+      <h2><span class="red-triangle">▲</span> Brake Repairs</h2>
+      <p>We all know why brake work is important, especially because the majority of car accidents are caused by failure to stop.</p>
+      <p>Get your brake pads replaced, which naturally wears down as you use them, and aren’t too costly to fix. At AutoMechanica, this type of repair may also cover brake lines, discs, drums, and rotor repair.</p>
+    </div>
+    <div class="image">
+      <img src="{% static 'images/brake-repair.jpg' %}" alt="Brake repair">
+    </div>
+    <div class="button-container">
+      <a href="#" class="callback-btn">Request a Callback</a>
+    </div>
+  </section>
+<section class="why-section">
+  <div class="why-header">
+    <div class="triangle"></div>
+    <h2>Why AutoMechanica</h2>
+    <p>We are one of the leading auto repair companies.</p>
+  </div>
+
+  <div class="why-content">
+    <div class="why-left">
+      <p>Variety of Brands to Choose from for Brake Pads & Brake Rotors</p>
+    </div>
+    <div class="why-center">
+      <img src="top-car-view.png" alt="Top View Car" />
+    </div>
+    <div class="why-right">
+      <p>Brake Rotor Skimming<br>Available instead of<br>Replacement</p>
+    </div>
+  </div>
+</section>
+<section class="how-it-works">
+  <div class="how-header">
+    <div class="triangle"></div>
+    <h2>How It Works</h2>
+  </div>
+  <div class="steps">
+    <!-- Step 1 -->
+    <div class="step">
+      <div class="step-number">1</div>
+      <img src="inspection-icon.png" alt="Inspection Icon" />
+      <h3>INSPECTION</h3>
+      <p>
+        AutoMechanica understands the value of your convenience and provides pick-up and drop facility of your car.
+      </p>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step">
+      <div class="step-number">2</div>
+      <img src="diagnosis-icon.png" alt="Diagnosis Report Icon" />
+      <h3>DIAGNOSIS REPORT</h3>
+      <p>
+        Once we are done with the inspection, we will share the details of the required work to be done on your car’s engine, along with an estimated idea of the cost of the repair.
+      </p>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+      <div class="step-number">3</div>
+      <img src="pickup-drop-icon.png" alt="Pickup Drop Icon" />
+      <h3>PICK-UP AND DROP</h3>
+      <p>
+        AutoMechanica understands the value of your convenience and provides pick-up and drop facility of your car.
+      </p>
+    </div>
+  </div>
+</section>
+</body>
+</html>

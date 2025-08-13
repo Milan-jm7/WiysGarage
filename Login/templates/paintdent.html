@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dent & Paint | AutoMechanica</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    {% load static %}
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #222;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.site-header .logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.site-header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.appointment-button {
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.hero {
+  background: url('hero-background.jpg') center/cover no-repeat;
+  padding: 6rem 2rem;
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.content-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+}
+
+.text h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.red-triangle {
+  color: red;
+  font-size: 1.5rem;
+  transform: rotate(45deg);
+}
+
+.image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+margin: 0;
+    padding: 0;
+    background-color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: #ccc;
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.feature {
+    flex: 1 1 200px;
+    max-width: 250px;
+    margin: 1rem;
+    text-align: center;
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+}
+
+.feature-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.feature-description {
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+.car-image {
+    max-width: 300px;
+    margin: 2rem auto;
+    display: block;
+}
+     margin: 0;
+  font-family: Arial, sans-serif;
+  background: white;
+}
+
+.how-it-works {
+  padding: 60px 20px;
+  text-align: center;
+  background: #fff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.title {
+  margin-bottom: 50px;
+}
+
+.title .arrow {
+  width: 20px;
+  height: 20px;
+  margin: 0 auto 10px;
+  background: red;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.title h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.step {
+  width: 30%;
+  min-width: 250px;
+}
+
+.icon {
+  font-size: 40px;
+  color: red;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #555;
+}
+    margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+.gallery-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.gallery-header .triangle {
+  width: 0;
+  height: 0;
+  margin: 0 auto 10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid red;
+}
+
+.gallery-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 40px;
+  padding: 0 10px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.button-container {
+  text-align: center;
+}
+
+.callback-button {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.callback-button:hover {
+  background-color: darkred;
+}
+  </style>
+</head>
+<body>
+{% load static %}
+  <header class="site-header">
+    <div class="logo">AUTOMECHANICA</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Select</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="/booking" class="appointment-button">BOOK AN APPOINTMENT</a>
+  </header>
+
+  <section class="hero">
+    <h1>Dent & Paint</h1>
+    <div class="image">
+      <img src="{% static 'images/paint.jpg' %}" alt="Spray painting a car" />
+
+    </div>
+  </section>
+
+  <section class="content-section">
+
+    <div class="text">
+      <h2><span class="red-triangle">▲</span> Dent & Paint</h2>
+      <p>Our technicians at AutoMechanica take immense pride in the quality of our work and in caring for your vehicle. All products and services used at our service center are of the highest quality to ensure the proper paint texture, gloss, and finish is rendered to your car. We go out of our way to make sure the process is smooth and hassle-free, keeping your satisfaction as our top priority.</p>
+    </div>
+
+    <div class="button-container">
+      <button  class="callback-button"><a href="/request">REQUEST A CALLBACK<a/> </button>
+    </div>
+  </section>
+<section class="why-section">
+    <h1>Why Automechanica</h1>
+    <p class="subtitle">We're A Company Of Talented Engineers & Mechanics</p>
+
+    <div class="features-container">
+      <div class="feature left">
+        <div class="icon">🛡️</div>
+        <h3>Warranty</h3>
+        <p>Paint Warranty for 6 Months</p>
+      </div>
+
+      <div class="feature left">
+        <div class="icon">🖌️</div>
+        <h3>Best Materials</h3>
+        <p>Industry Best Paints & Materials used</p>
+      </div>
+
+      <div class="car-image">
+        <img src="car.png" alt="Car Top View">
+      </div>
+
+      <div class="feature right">
+        <div class="icon">🚗</div>
+        <h3>Paint Booth</h3>
+        <p>Best In Class Paint Booth Technology</p>
+      </div>
+
+      <div class="feature right">
+        <div class="icon">🎯</div>
+        <h3>Quality</h3>
+        <p>Best Quality Equipment & Tools for Dent Removal</p>
+      </div>
+    </div>
+  </section>
+<section class="how-it-works">
+    <div class="container">
+      <div class="title">
+        <div class="arrow"></div>
+        <h2>How It Works</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="icon">🔧</div>
+          <h3>INSPECTION</h3>
+          <p>Share the pictures of your damaged vehicle on our WhatsApp.</p>
+        </div>
+        <div class="step">
+          <div class="icon">📋</div>
+          <h3>QUOTES</h3>
+          <p>Upon receiving the pictures, our experts will share the best quotes.</p>
+        </div>
+        <div class="step">
+          <div class="icon">🚗</div>
+          <h3>PICK - UP DROP</h3>
+          <p>AutoMechanica understands the value of your convenience and provides pick-up and drop facility of your car.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<section class="gallery-section">
+    <div class="gallery-header">
+      <div class="triangle"></div>
+      <h1>Gallery</h1>
+    </div>
+    <div class="gallery-grid">
+      <img src="dpg1.jpg" alt="Dent repair">
+      <img src="pant.jpg" alt="Car painting">
+      <img src="dpg3.jpg" alt="Dent removal">
+      <img src="dpg4.jpg" alt="Paintless dent repair">
+      <img src="dpg5.jpg" alt="Car paint spray">
+    </div>
+    <div class="button-container">
+      <button class="callback-button">REQUEST A CALLBACK</button>
+    </div>
+  </section>
+</body>
+</html>
